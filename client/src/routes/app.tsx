@@ -3,18 +3,19 @@ import { Header } from "../components/header/header.tsx";
 import { Insights } from "../components/insights/insights.tsx";
 import styles from "./app.module.css";
 import type { Insight } from "../schemas/insight.ts";
+import useInsights from "../hooks/useInsights";
 
 export const App = () => {
-  const [insights, setInsights] = useState<Insight>([]);
+  const { insights, refetch, error } = useInsights();
 
   useEffect(() => {
-    fetch(`/api/insights`).then((res) => setInsights(res.json()));
+    refetch();
   }, []);
 
   return (
     <main className={styles.main}>
-      <Header />
-      <Insights className={styles.insights} insights={insights} />
+      <Header refetch={refetch} />
+      <Insights insights={insights} refetch={refetch} />
     </main>
   );
 };

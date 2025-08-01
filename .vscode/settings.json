@@ -3,9 +3,15 @@
   "deno.lint": true,
   "editor.formatOnSave": true,
   "[typescript]": {
-    "editor.defaultFormatter": "denoland.vscode-deno"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "cssvar.files": ["./src/styles/variables.css"],
+  "cssvar.files": [
+    "./src/styles/variables.css"
+  ],
   "cssvar.disableSort": true,
-  "cssvar.extensions": ["css", "tsx", "ts"]
+  "cssvar.extensions": [
+    "css",
+    "tsx",
+    "ts"
+  ]
 }
