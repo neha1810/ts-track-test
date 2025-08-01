@@ -5,7 +5,7 @@ import { insertStatement } from "$tables/insights.ts";
 
 type Input = HasDBClient & {
   insight: {
-    brand: string;
+    brand: number;
     text: string;
   };
 };
